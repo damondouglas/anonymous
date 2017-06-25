@@ -7,9 +7,9 @@ const await = require("asyncawait/await")
 const notes = {
     create: async (
         (req, res) => {
-            var content = req.body.content
+            let content = req.body.content
             if (content) {
-                var note = new Note({
+                let note = new Note({
                     content: content
                 })
                 try {
@@ -29,7 +29,7 @@ const notes = {
     list: async (
         (req, res) => {
             try {
-                var noteS = await (
+                let noteS = await (
                     Note.find()
                 )
                 res.json(noteS)
